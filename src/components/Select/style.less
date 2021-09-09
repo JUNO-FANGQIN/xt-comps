@@ -1,0 +1,22 @@
+@import 'constants/style.less';
+
+.xt-select{
+    padding-left: 8px;
+    color: @minor-font-color;
+
+    .ant-select{
+        width: 100%;
+    }
+
+    .ant-select.ant-select-multiple{
+        // 多选每一项的样式覆盖
+        .ant-select-selection-item{
+            background-color: #fff2ea;
+            border-color: rgba(255, 147, 74, 0.15);
+
+            .ant-select-selection-item-content{
+                color: @main-color;
+            }
+        }
+    }
+}

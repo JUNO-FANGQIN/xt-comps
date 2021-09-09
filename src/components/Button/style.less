@@ -1,0 +1,123 @@
+@import "../../constants/style.less";
+
+.xt-button {
+  border-radius: 2px;
+  outline: 0;
+  font-size: @main-font-size;
+  cursor: pointer;
+  line-height: @main-line-height;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 16px;
+  height: 36px;
+}
+
+.xt-medium-button{
+  padding: 4px 16px;
+  height: 32px;
+}
+
+.xt-small-button{
+  padding: 0 8px;
+  height: 24px;
+}
+
+.xt-button-icon{
+  margin-right: 6px;
+}
+
+.xt-primary-button{
+  border: 1px solid @main-color;
+  background-color: @main-color;
+  color: #fff;
+
+  &:hover{
+    border: 1px solid @main-color-hover;
+    background-color: @main-color-hover;
+  }
+
+  &:focus{
+    border: 1px solid @main-color-focus;
+    background-color: @main-color-focus;
+  }
+}
+
+.xt-secondary-button{
+  border: 1px solid @border-color;
+  background-color: #fff;
+  color: @main-font-color;
+
+  &:hover{
+    border-color: @main-color-hover;
+    color: @main-color-hover;
+  }
+
+  &:focus{
+    border-color: @main-color-focus;
+    color: @main-color-focus;
+  }
+}
+
+.xt-dashed-button{
+  border: 1px dashed @border-color;
+  background-color: #fff;
+  color: @main-font-color;
+
+  &:hover{
+    border-color: @main-color-hover;
+    color: @main-color-hover;
+  }
+
+  &:focus{
+    border-color: @main-color-focus;
+    color: @main-color-focus;
+  }
+}
+
+.xt-danger-button{
+  border: 1px solid @error-color;
+  background-color: @error-color;
+  color: #fff;
+
+  &:hover{
+    border: 1px solid @error-color-hover;
+    background-color: @error-color-hover;
+  }
+
+  &:focus{
+    border: 1px solid @error-color-focus;
+    background-color: @error-color-focus;
+  }
+}
+
+.xt-warn-button{
+  border: 1px solid @warn-color;
+  background-color: @warn-color;
+  color: #fff;
+
+  &:hover{
+    border: 1px solid @warn-color-hover;
+    background-color: @warn-color-hover;
+  }
+
+  &:focus{
+    border: 1px solid @warn-color-focus;
+    background-color: @warn-color-focus;
+  }
+}
+
+.xt-disabled-button{
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+
+  &:hover, &:focus{
+    opacity: 1;
+    border-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.25);
+  }
+}

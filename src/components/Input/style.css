@@ -1,0 +1,50 @@
+@import url('constants/style.css');
+.input{
+
+}
+
+.suffix{
+    padding-left: 8px;
+    color: var(--minor-font-color);
+}
+
+:global(.xtcomp-input .ant-input) {
+    line-height: var(--main-line-height)!important;
+    padding: 4px 12px!important;
+    font-size: var(--main-font-size)!important;
+}
+
+:global(.xtcomp-input .ant-input.ant-input-lg) {
+    padding: 6px 12px!important;
+    font-size: var(--main-font-size)!important;
+}
+
+:global(.xtcomp-input .ant-input.ant-input-sm) {
+    padding: 0px 12px!important;
+    font-size: var(--mini-font-size)!important;
+}
+
+:global(.xtcomp-input .ant-input-affix-wrapper) {
+    padding: 0 12px 0 0!important;
+}
+
+:global(.xtcomp-input .ant-btn-icon-only.ant-btn.ant-input-search-button) {
+    border: 0!important;
+}
+
+:global(.xtcomp-input .ant-btn-icon-only.ant-btn-lg.ant-input-search-button) {
+    width: 36px!important;
+    height: 36px!important;
+}
+
+:global(.xtcomp-input .ant-input-search.ant-input-group-wrapper-lg .ant-input-group-addon) {
+    margin-left: -36px!important;
+}
+
+:global(.xtcomp-input .ant-input-search.ant-input-group-wrapper .ant-input-group-addon) {
+    margin-left: -32px!important;
+}
+
+:global(.xtcomp-input .ant-input-search.ant-input-group-wrapper-sm .ant-input-group-addon) {
+    margin-left: -24px!important;
+}

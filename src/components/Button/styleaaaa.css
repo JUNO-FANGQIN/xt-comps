@@ -1,0 +1,126 @@
+@import url('../../constants/style.css');
+
+.button {
+  border-radius: 2px;
+  outline: 0;
+  font-size: var(--main-font-size);
+  cursor: pointer;
+  line-height: var(--main-line-height);
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 16px;
+  height: 36px;
+}
+
+.mediumButton{
+  padding: 4px 16px;
+  height: 32px;
+}
+
+.smallButton{
+  padding: 0 8px;
+  height: 24px;
+}
+
+.icon{
+  margin-right: 6px;
+}
+
+.primaryButton{
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+  color: #fff;
+}
+.primaryButton:hover{
+  border: 1px solid var(--main-color-hover);
+  background-color: var(--main-color-hover);
+}
+.primaryButton:focus{
+  border: 1px solid var(--main-color-focus);
+  background-color: var(--main-color-focus);
+}
+
+.secondaryButton{
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  color: var(--main-font-color);
+}
+.secondaryButton:hover{
+  border-color: var(--main-color-hover);
+  color: var(--main-color-hover);
+}
+.secondaryButton:focus{
+  border-color: var(--main-color-focus);
+  color: var(--main-color-focus);
+}
+
+.dashedButton{
+  border: 1px dashed var(--border-color);
+  background-color: #fff;
+  color: var(--main-font-color);
+}
+.dashedButton:hover{
+  border-color: var(--main-color-hover);
+  color: var(--main-color-hover);
+}
+.dashedButton:focus{
+  border-color: var(--main-color-focus);
+  color: var(--main-color-focus);
+}
+
+.dangerButton{
+  border: 1px solid var(--error-color);
+  background-color: var(--error-color);
+  color: #fff;
+}
+.dangerButton:hover{
+  border: 1px solid var(--error-color-hover);
+  background-color: var(--error-color-hover);
+}
+.dangerButton:focus{
+  border: 1px solid var(--error-color-focus);
+  background-color: var(--error-color-focus);
+}
+
+.warnButton{
+  border: 1px solid var(--warn-color);
+  background-color: var(--warn-color);
+  color: #fff;
+}
+.warnButton:hover{
+  border: 1px solid var(--warn-color-hover);
+  background-color: var(--warn-color-hover);
+}
+.warnButton:focus{
+  border: 1px solid var(--warn-color-focus);
+  background-color: var(--warn-color-focus);
+}
+
+.textButton{
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  color: var(--main-color);
+  cursor: pointer;
+}
+.textButton:hover{
+  color: var(--main-color-hover);
+}
+.textButton:focus{
+  color: var(--main-color-focus);
+}
+
+.disabledButton{
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+}
+.disabledButton:hover, .disabledButton:focus{
+  opacity: 1;
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+}
+

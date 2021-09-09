@@ -1,0 +1,26 @@
+:root{
+    --main-color: #ff934a;
+    --main-color-focus: #F07224;
+    --main-color-hover: #FFA364;
+
+    --success-color: #52C41A;
+
+    --warn-color: #FAAD14;
+    --warn-color-focus: #f2b400;
+    --warn-color-hover: #ffcb34;
+
+    --error-color: #ff4d4f;
+    --error-color-focus: #df0000;
+    --error-color-hover: #f82a2a;
+
+    --tip-color: #1890ff;
+
+    --main-font-color: #000;
+    --minor-font-color: rgba(0, 0, 0, 0.85);
+    --border-color: rgba(0, 0, 0, 0.15);
+
+    --main-font-size: 14px;
+    --mini-font-size: 12px;
+    --main-line-height: 22px;
+    --mini-line-height: 20px;
+}

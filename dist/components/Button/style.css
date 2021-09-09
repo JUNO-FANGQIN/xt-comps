@@ -1,0 +1,106 @@
+/*!***************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/components/Button/style.less ***!
+  \***************************************************************************************************************************/
+.xt-button {
+  border-radius: 2px;
+  outline: 0;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 22px;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 16px;
+  height: 36px;
+}
+.xt-medium-button {
+  padding: 4px 16px;
+  height: 32px;
+}
+.xt-small-button {
+  padding: 0 8px;
+  height: 24px;
+}
+.xt-button-icon {
+  margin-right: 6px;
+}
+.xt-primary-button {
+  border: 1px solid #ff934a;
+  background-color: #ff934a;
+  color: #fff;
+}
+.xt-primary-button:hover {
+  border: 1px solid #FFA364;
+  background-color: #FFA364;
+}
+.xt-primary-button:focus {
+  border: 1px solid #F07224;
+  background-color: #F07224;
+}
+.xt-secondary-button {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: #000;
+}
+.xt-secondary-button:hover {
+  border-color: #FFA364;
+  color: #FFA364;
+}
+.xt-secondary-button:focus {
+  border-color: #F07224;
+  color: #F07224;
+}
+.xt-dashed-button {
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: #000;
+}
+.xt-dashed-button:hover {
+  border-color: #FFA364;
+  color: #FFA364;
+}
+.xt-dashed-button:focus {
+  border-color: #F07224;
+  color: #F07224;
+}
+.xt-danger-button {
+  border: 1px solid #ff4d4f;
+  background-color: #ff4d4f;
+  color: #fff;
+}
+.xt-danger-button:hover {
+  border: 1px solid #f82a2a;
+  background-color: #f82a2a;
+}
+.xt-danger-button:focus {
+  border: 1px solid #df0000;
+  background-color: #df0000;
+}
+.xt-warn-button {
+  border: 1px solid #FAAD14;
+  background-color: #FAAD14;
+  color: #fff;
+}
+.xt-warn-button:hover {
+  border: 1px solid #ffcb34;
+  background-color: #ffcb34;
+}
+.xt-warn-button:focus {
+  border: 1px solid #f2b400;
+  background-color: #f2b400;
+}
+.xt-disabled-button {
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+}
+.xt-disabled-button:hover,
+.xt-disabled-button:focus {
+  opacity: 1;
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+}
+

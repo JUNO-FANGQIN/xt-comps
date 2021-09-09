@@ -1,0 +1,140 @@
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TSImportPluginFactory = require('ts-import-plugin')
+const glob = require('glob')
+
+function utils () {
+    const entrys = { main: './src/index.ts' }
+    const externals = {}
+    const files = glob.sync('./src/**/index.*(jsx|tsx)')
+    files.forEach(file => {
+        const execed = /^\.\/src\/([/a-zA-Z0-9_]+?)\/index\.(jsx|tsx)$/.exec(file)
+        if (execed && execed[1]) {
+            entrys[execed[1]] = file
+            externals[execed[1]] = `xtcomp/${execed[1]}`
+        }
+    })
+    return { entrys, externals }
+}
+
+const { entrys, externals } = utils()
+
+module.exports = {
+    entry: entrys,
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: (context) => context.chunk.name === 'main' ? 'index.js' : `${context.chunk.name}/index.js`,
+        library: {
+            type: 'umd'
+        },
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                include: /src/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-react'],
+                    plugins: [
+                        ['import', {
+                          libraryName: 'antd',
+                          libraryDirectory: 'lib',
+                          style: true
+                        }]
+                    ]
+                }
+            },
+            {
+                test: /\.tsx?$/,
+                include: /src/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-react']
+                        }
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                          getCustomTransformers: () =>({
+                            before: [TSImportPluginFactory([{
+                              libraryName: 'antd',
+                              libraryDirectory: 'lib',
+                              style: true
+                            }])]
+                          })
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.less$/,
+                include: /src/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.less$/,
+                include: /node_modules/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', {
+                  loader: 'less-loader',
+                  options: {
+                    lessOptions: {
+                      modifyVars: {
+                        'primary-color': '#ff934a',
+                        'font-size-base': '14px'
+                      },
+                      javascriptEnabled: true
+                    }
+                  }
+                }]
+            },
+            {
+                test: /\.(css)$/,
+                include: /src/,
+                use: [MiniCssExtractPlugin.loader, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: {
+                            localIdentName: '[local]_[hash:base64:4]'
+                        }
+                    }
+                }]
+            },
+            {
+                test: /\.(jpg|png|gif|svg|jpeg)$/,
+                include: /src/,
+                loader: 'url-loader'
+            }
+        ]
+    },
+    plugins: [
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         { 
+        //             from: path.join(__dirname, 'package.json'),
+        //             to: path.join(__dirname, 'dist/package.json')
+        //         }
+        //     ]
+        // }),
+        new MiniCssExtractPlugin({
+            filename: (context) => `${context.chunk.name}/style.css`
+        })
+    ],
+    externals: [
+        {
+            react: 'react',
+            ...externals
+        }
+    ],
+    resolve: {
+        modules: [
+            path.join(__dirname, 'node_modules'),
+            path.join(__dirname, 'src')
+        ],
+        mainFiles: ['index', 'index.d'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.d.ts'],
+    }
+}
