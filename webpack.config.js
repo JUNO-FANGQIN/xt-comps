@@ -9,12 +9,13 @@ function utils () {
     const externals = {}
     const files = glob.sync('./src/**/index.*(jsx|tsx)')
     files.forEach(file => {
-        const execed = /^\.\/src\/([/a-zA-Z0-9_]+?)\/index\.(jsx|tsx)$/.exec(file)
+        const execed = /^\.\/src\/[a-zA-Z0-9_]+\/([a-zA-Z0-9_]+)\/index\.(jsx|tsx)$/.exec(file)
         if (execed && execed[1]) {
             entrys[execed[1]] = file
-            externals[execed[1]] = `xtcomp/${execed[1]}`
+            externals[execed[1]] = `xtcomps/lib/${execed[1]}`
         }
     })
+    console.log('entrys', entrys, externals)
     return { entrys, externals }
 }
 
@@ -23,7 +24,7 @@ const { entrys, externals } = utils()
 module.exports = {
     entry: entrys,
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist/lib'),
         filename: (context) => context.chunk.name === 'main' ? 'index.js' : `${context.chunk.name}/index.js`,
         library: {
             type: 'umd'

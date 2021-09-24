@@ -1,5 +1,7 @@
 node_modules
 .history/
-storybook-static
+storybook-static/
 yarn-error.log
 yarn.lock
+dist/
+demo/

@@ -1,0 +1,49 @@
+warning ../../../package.json: No license field
+$ build-storybook --output-dir /var/folders/4y/jvbqwx8j7mdcsgy93fw8q8940000gn/T/chromatic--8730-5sYxC4HTblim
+info @storybook/react v6.3.7
+info 
+info => Cleaning outputDir: /var/folders/4y/jvbqwx8j7mdcsgy93fw8q8940000gn/T/chromatic--8730-5sYxC4HTblim
+info => Loading presets
+info => Compiling preview..
+info => Loading 1 config file in "/Users/juno/Desktop/code/xt-comps/.storybook"
+info => Loading 9 other files in "/Users/juno/Desktop/code/xt-comps/.storybook"
+info => Adding stories defined in "/Users/juno/Desktop/code/xt-comps/.storybook/main.js"
+info => Using implicit CSS loaders
+info => Loading custom Webpack config (full-control mode).
+<s> [webpack.Progress] 0% compiling
+ERR! TypeError: Cannot read property 'get' of undefined
+ERR!     at exports.provide (/Users/juno/Desktop/code/xt-comps/node_modules/webpack/lib/util/MapHelpers.js:17:20)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/webpack/lib/DefinePlugin.js:290:6
+ERR!     at SyncHook.eval [as call] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:11:1)
+ERR!     at SyncHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at Compiler.newCompilation (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:631:26)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:667:29
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+ERR!     at AsyncSeriesHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at Compiler.compile (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:662:28)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:321:11
+ERR!     at Compiler.readRecords (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:529:11)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:318:10
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+ERR!     at AsyncSeriesHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:315:19
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+ERR!  TypeError: Cannot read property 'get' of undefined
+ERR!     at exports.provide (/Users/juno/Desktop/code/xt-comps/node_modules/webpack/lib/util/MapHelpers.js:17:20)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/webpack/lib/DefinePlugin.js:290:6
+ERR!     at SyncHook.eval [as call] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:11:1)
+ERR!     at SyncHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at Compiler.newCompilation (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:631:26)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:667:29
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+ERR!     at AsyncSeriesHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at Compiler.compile (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:662:28)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:321:11
+ERR!     at Compiler.readRecords (/Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:529:11)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:318:10
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)
+ERR!     at AsyncSeriesHook.lazyCompileHook (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/Hook.js:154:20)
+ERR!     at /Users/juno/Desktop/code/xt-comps/node_modules/@storybook/builder-webpack4/node_modules/webpack/lib/Compiler.js:315:19
+ERR!     at AsyncSeriesHook.eval [as callAsync] (eval at create (/Users/juno/Desktop/code/xt-comps/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
