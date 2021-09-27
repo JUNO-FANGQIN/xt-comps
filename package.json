@@ -31,8 +31,7 @@
     "react-styleguidist": "^11.1.7",
     "ts-import-plugin": "^1.6.7",
     "typescript": "^4.3.5",
-    "xtcomp": "^1.0.25",
-    "xtcomps": "^1.0.29"
+    "xtcomp": "^1.0.25"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

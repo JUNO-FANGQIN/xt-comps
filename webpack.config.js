@@ -15,7 +15,6 @@ function utils () {
             externals[execed[1]] = `xtcomps/lib/${execed[1]}`
         }
     })
-    console.log('entrys', entrys, externals)
     return { entrys, externals }
 }
 
@@ -112,14 +111,14 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         { 
-        //             from: path.join(__dirname, 'package.json'),
-        //             to: path.join(__dirname, 'dist/package.json')
-        //         }
-        //     ]
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { 
+                    from: path.join(__dirname, 'src/constants'),
+                    to: path.join(__dirname, 'dist/constants')
+                }
+            ]
+        }),
         new MiniCssExtractPlugin({
             filename: (context) => `${context.chunk.name}/style.css`
         })
