@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Alert as AntdAlert } from 'antd'
 
-import './add/style.less'
-import './move/style.less'
+import 'resource/fonts/font.less'
 
 export enum EMIconType {
   Move = 'move',
   Add = 'add',
+  Avatar = 'avatar'
 }
 
 export interface TIcon {

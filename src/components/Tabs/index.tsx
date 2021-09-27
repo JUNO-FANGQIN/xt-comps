@@ -7,7 +7,7 @@ import './style.less'
 
 export interface TTabItem {
   id: string
-  icon: any,
+  icon?: any,
   label: string,
   value: string,
   content: any,

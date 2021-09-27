@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TSImportPluginFactory = require('ts-import-plugin')
 const glob = require('glob')
+const webpackIconfontPluginNodejs = require('webpack-iconfont-plugin-nodejs')
 
 function utils () {
     const entrys = { main: './src/index.ts' }
@@ -104,7 +105,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(jpg|png|gif|svg|jpeg)$/,
+                test: /\.(jpg|png|gif|svg|jpeg|ttf|eot|otf|svg|woff|woff2)$/,
                 include: /src/,
                 loader: 'url-loader'
             }
@@ -121,6 +122,15 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: (context) => `${context.chunk.name}/style.css`
+        }),
+        new webpackIconfontPluginNodejs({
+            fontName: 'xt-icons',
+            cssPrefix: 'icon',
+            svgs: path.join(__dirname, 'src/resource/svgs/*.svg'),
+            fontsOutput: path.join(__dirname, 'src/resource/fonts/'),
+            cssOutput: path.join(__dirname, 'src/resource/fonts/font.less'),
+            htmlOutput: path.join(__dirname, 'src/resource/fonts/font.html'),
+            jsOutput: path.join(__dirname, 'src/resource/fonts/font.js'),
         })
     ],
     externals: [

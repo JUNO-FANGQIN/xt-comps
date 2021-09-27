@@ -1,0 +1,31 @@
+@font-face {
+    font-family: xt-icons;
+    src: url("xt-icons.eot");src: url("xt-icons.eot?e1c4c3e7#iefix") format("embedded-opentype"),
+             url("xt-icons.woff2?e1c4c3e7") format("woff2"),
+             url("xt-icons.woff?e1c4c3e7") format("woff"),
+             url("xt-icons.ttf?e1c4c3e7") format("truetype"),
+             url("xt-icons.svg?e1c4c3e7#xt-icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon"], [class*=" icon"] {
+    font-family: 'xt-icons' !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+
+
+.icon-add::before {
+    content: "\ea01";
+}
+
+.icon-avatar::before {
+    content: "\ea02";
+}
+
+.icon-move::before {
+    content: "\ea03";
+}
+
