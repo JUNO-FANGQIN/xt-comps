@@ -32,7 +32,8 @@
     "ts-import-plugin": "^1.6.7",
     "typescript": "^4.3.5",
     "webpack-iconfont-plugin-nodejs": "^1.0.19",
-    "xtcomp": "^1.0.25"
+    "xtcomp": "^1.0.25",
+    "xtcomps": "^1.0.33"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -51,6 +52,7 @@
     "ts-loader": "^9.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.43.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   }
