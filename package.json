@@ -9,9 +9,7 @@
     "docgen": "styleguidist server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-chromatic": "npx chromatic --project-token=ff980ea10177",
-    "lint": "eslint src",
-    "precommit": "echo 'hello world pre-commit' && exit 0"
+    "build-chromatic": "npx chromatic --project-token=ff980ea10177"
   },
   "author": "",
   "license": "ISC",
