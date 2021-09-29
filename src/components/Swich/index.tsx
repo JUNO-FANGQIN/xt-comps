@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Switch as AntdSwitch } from 'antd'
+import * as React from 'react';
+import { Switch as AntdSwitch } from 'antd';
 
-import './style.less'
+import './style.less';
 
 export interface TSwitch {
   /** 辅助测试自动化 */
@@ -24,12 +24,12 @@ export interface TSwitch {
 }
 
 const Switch = (props: TSwitch) => {
-	const { id, styleClassname, style, ...args } = props
+	const { id, styleClassname, style, ...args } = props;
 	return (
 		<div className={`xt-radio ${styleClassname}`} style={style} id={id}>
-      <AntdSwitch {...args} />
+			<AntdSwitch {...args} />
 		</div>
-	)
-}
+	);
+};
 
-export default Switch
+export default Switch;

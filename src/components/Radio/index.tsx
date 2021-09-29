@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { Radio as AntdRadio } from 'antd'
-import Error from 'components/Error'
+import * as React from 'react';
+import { Radio as AntdRadio } from 'antd';
+import Error from 'components/Error';
 
-import './style.less'
+import './style.less';
 
 export interface TRadioOption {
   id: string,
-  label: string
+  label: string,
   value: string
 }
 
@@ -31,17 +31,17 @@ export interface TRadio {
 }
 
 const Radio = (props: TRadio) => {
-	const { meta = null, input = null, options, styleClassname, style, ...args } = props
+	const { meta = null, input = null, options, styleClassname, style, ...args } = props;
 	return (
 		<div className={`xt-radio ${styleClassname}`} style={style}>
-      <AntdRadio.Group {...(input || {})} {...args}>
-        {options && Array.isArray(options) && options.map((option: TRadioOption) => (
-          <AntdRadio id={option.id} key={option.id} value={option.value}>{option.label}</AntdRadio>
-        ))}
-      </AntdRadio.Group>
+			<AntdRadio.Group {...(input || {})} {...args}>
+				{options && Array.isArray(options) && options.map((option: TRadioOption) => (
+					<AntdRadio id={option.id} key={option.id} value={option.value}>{option.label}</AntdRadio>
+				))}
+			</AntdRadio.Group>
 			{meta && meta.touched && meta.error && <Error text={meta.error} />}
 		</div>
-	)
-}
+	);
+};
 
-export default Radio
+export default Radio;

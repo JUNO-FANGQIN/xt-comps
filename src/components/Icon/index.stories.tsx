@@ -16,7 +16,7 @@ export const Default = () => {
     <div style={{ display: 'flex', flexDirection: 'row'}}>
       {types.map((type: EMIconType)  => {
         return (
-          <div style={{ margin: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div key={type} style={{ margin: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Icon id="key" type={type} />
             <div>icon-{type}</div>
           </div>

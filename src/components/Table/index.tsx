@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Table as AntdTable } from 'antd'
+import * as React from 'react';
+import { Table as AntdTable } from 'antd';
 
-import './style.less'
+import './style.less';
 
 export enum EMColumnAlign {
   Left = 'left',
@@ -44,12 +44,12 @@ export interface TTabs {
 }
 
 const Table = (props: TTabs) => {
-	const { styleClassname, style = {}, type = EMTabsType.Line, ...args } = props
+	const { styleClassname, style = {} } = props;
 	return (
 		<div className={`xt-table ${styleClassname}`} style={style}>
-      <AntdTable />
+			<AntdTable />
 		</div>
-	)
-}
+	);
+};
 
-export default Table
+export default Table;

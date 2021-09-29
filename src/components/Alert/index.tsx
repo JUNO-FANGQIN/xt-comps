@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Alert as AntdAlert } from 'antd'
+import * as React from 'react';
+import { Alert as AntdAlert } from 'antd';
 
-import './style.less'
+import './style.less';
 
 export enum IAlertType {
   Success = 'success',
@@ -35,12 +35,12 @@ export interface TAlert {
 }
 
 const Alert = (props: TAlert) => {
-	const { styleClassname, style, showIcon = true, ...args } = props
+	const { styleClassname, style, showIcon = true, ...args } = props;
 	return (
 		<div className={`xt-alert ${styleClassname}`} style={style}>
-      <AntdAlert {...args} />
+			<AntdAlert {...args} />
 		</div>
-	)
-}
+	);
+};
 
-export default Alert
+export default Alert;

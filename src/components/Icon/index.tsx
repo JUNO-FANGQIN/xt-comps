@@ -1,12 +1,11 @@
-import * as React from 'react'
-import { Alert as AntdAlert } from 'antd'
+import * as React from 'react';
 
-import 'resource/fonts/font.less'
+import 'resource/fonts/font.less';
 
 export enum EMIconType {
   Move = 'move',
   Add = 'add',
-  Avatar = 'avatar';
+  Avatar = 'avatar'
 }
 
 export interface TIcon {
@@ -17,12 +16,12 @@ export interface TIcon {
 }
 
 const Icon = (props: TIcon) => {
-	const { id, type, ...args } = props
+	const { id, type } = props;
 	return (
 		<span className="xt-icon" id={id}>
-      <i className={`icon-${type}`}></i>
+			<i className={`icon-${type}`}></i>
 		</span>
-	)
-}
+	);
+};
 
-export default Icon
+export default Icon;
