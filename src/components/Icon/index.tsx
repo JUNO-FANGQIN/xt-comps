@@ -6,7 +6,7 @@ import 'resource/fonts/font.less'
 export enum EMIconType {
   Move = 'move',
   Add = 'add',
-  Avatar = 'avatar'
+  Avatar = 'avatar';
 }
 
 export interface TIcon {
