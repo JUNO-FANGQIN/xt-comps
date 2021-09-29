@@ -10,9 +10,12 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-chromatic": "npx chromatic --project-token=ff980ea10177",
-    "test": "echo 'hello world pre-commit' && exit 0"
+    "linit": "eslint --init",
+    "test": "eslint src"
   },
-  "pre-commit": ["test"],
+  "pre-commit": [
+    "lint"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

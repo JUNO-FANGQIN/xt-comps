@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Alert as AntdAlert } from 'antd'
-fdsf
+
 import 'resource/fonts/font.less'
 
 export enum EMIconType {
