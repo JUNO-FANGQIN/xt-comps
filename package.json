@@ -12,6 +12,7 @@
     "build-chromatic": "npx chromatic --project-token=ff980ea10177",
     "lint": "eslint src"
   },
+  "pre-commit": ["lint"],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
