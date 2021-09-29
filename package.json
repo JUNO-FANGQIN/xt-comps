@@ -10,8 +10,15 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-chromatic": "npx chromatic --project-token=ff980ea10177",
-    "lint": "eslint --init"
+    "lint:staged": "lint-staged"
   },
+  "lint-staged": {
+    "linters": {
+      "*.js": ["eslint --ignore-path .gitignore --fix"]
+    },
+    "ignore": []
+  },
+  "pre-commit": "lint:staged",
   "author": "",
   "license": "ISC",
   "dependencies": {
