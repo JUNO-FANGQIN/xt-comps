@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { Input as AntdInput } from 'antd'
-import Error from 'components/Error'
+import * as React from 'react';
+import { Input as AntdInput } from 'antd';
+import Error from 'components/Error';
 
-import './style.less'
+import './style.less';
 
 export enum EMInputType {
   Input = 'Input',
@@ -25,12 +25,12 @@ export interface TInput {
   * 类型 
   * @default EMInputType.Input
   */
-  type?: EMInputType
+  type?: EMInputType,
   /**
   * 型号，参照antd的size
   * @default EMButtonSize.Large
   */
-  size?: EMInputSize
+  size?: EMInputSize,
   /**
    * 是否禁止输入框
    * @default false
@@ -55,24 +55,24 @@ export interface TInput {
 }
 
 const Input = (props: TInput) => {
-	const { meta = null, input = null, id, type = EMInputType.Input, size = EMInputSize.Large, ...args } = props
-	console.log('props', props)
-  const commonProps = {
-    id: id,
-    size: size,
-    autoComplete: 'off',
-    ...(input || {}),
-    ...args,
-    suffix: args.suffix && <span className="xt-input-suffix">{args.suffix}</span>
-  }
+	const { meta = null, input = null, id, type = EMInputType.Input, size = EMInputSize.Large, ...args } = props;
+	console.log('props', props);
+	const commonProps = {
+		id: id,
+		size: size,
+		autoComplete: 'off',
+		...(input || {}),
+		...args,
+		suffix: args.suffix && <span className="xt-input-suffix">{args.suffix}</span>
+	};
 	return (
 		<div className="xt-input">
-      {type === EMInputType.Input && <AntdInput {...commonProps} />}
-      {type === EMInputType.Password && (!input || input.value ? <AntdInput.Password visibilityToggle {...commonProps} /> : <AntdInput {...commonProps} />)}
-      {type === EMInputType.Search && <AntdInput.Search {...commonProps} />}
+			{type === EMInputType.Input && <AntdInput {...commonProps} />}
+			{type === EMInputType.Password && (!input || input.value ? <AntdInput.Password visibilityToggle {...commonProps} /> : <AntdInput {...commonProps} />)}
+			{type === EMInputType.Search && <AntdInput.Search {...commonProps} />}
 			{meta && meta.touched && meta.error && <Error text={meta.error} />}
 		</div>
-	)
-}
+	);
+};
 
-export default Input
+export default Input;

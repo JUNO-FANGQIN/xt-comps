@@ -6,7 +6,7 @@ import Explain from './index';
 export default {
   title: 'Example/Blocks/Explain',
   component: Explain
-} as ComponentMeta<typeof Explain>;
+} as ComponentMeta<typeof Explain>
 
 const Template: ComponentStory<typeof Explain> = (args) => <Explain {...args} />;
 

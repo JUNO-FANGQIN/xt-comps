@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { Tabs as AntdTabs } from 'antd'
+import * as React from 'react';
+import { Tabs as AntdTabs } from 'antd';
 
-const { TabPane } = AntdTabs
+const { TabPane } = AntdTabs;
 
-import './style.less'
+import './style.less';
 
 export interface TTabItem {
-  id: string
+  id: string,
   icon?: any,
   label: string,
   value: string,
@@ -44,20 +44,20 @@ export interface TTabs {
 }
 
 const Tabs = (props: TTabs) => {
-	const { styleClassname, style = {}, paneStyle, tabs, type = EMTabsType.Line, ...args } = props
+	const { styleClassname, style = {}, paneStyle, tabs, type = EMTabsType.Line, ...args } = props;
 	return (
 		<div className={`xt-tabs ${styleClassname}`} style={style}>
-      <AntdTabs type={type} {...args}>
-        {Array.isArray(tabs) && tabs.map((tab) => {
-          return (
-            <TabPane id={tab.id} tab={<span>{tab.icon}{tab.label}</span>} key={tab.value} {...tab.args}>
-              <div className={paneStyle}>{tab.content}</div>
-            </TabPane>
-          )
-        })}
-      </AntdTabs>
+			<AntdTabs type={type} {...args}>
+				{Array.isArray(tabs) && tabs.map((tab) => {
+					return (
+						<TabPane id={tab.id} tab={<span>{tab.icon}{tab.label}</span>} key={tab.value} {...tab.args}>
+							<div className={paneStyle}>{tab.content}</div>
+						</TabPane>
+					);
+				})}
+			</AntdTabs>
 		</div>
-	)
-}
+	);
+};
 
-export default Tabs
+export default Tabs;

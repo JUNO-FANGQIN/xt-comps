@@ -1,8 +1,8 @@
-import * as React from 'react'
-import classNames from 'classnames'
-import Loading from 'components/Loading'
+import * as React from 'react';
+import classNames from 'classnames';
+import Loading from 'components/Loading';
 
-import './style.less'
+import './style.less';
 
 export enum EMButtonType {
   Primary = 'Primary',
@@ -25,17 +25,17 @@ interface TButton {
   * 类型 
   * @default EMButtonType.Primary
   */
-  type?: EMButtonType
+  type?: EMButtonType,
   /**
   * 型号 
   * @default EMButtonSize.Large
   */
-  size?: EMButtonSize
+  size?: EMButtonSize,
   /**
   * 文案
   * @default 确定
   */
-  text?: string
+  text?: string,
   /** 操作函数 */
   onClick?: (e: any) => void,
   
@@ -50,44 +50,44 @@ interface TButton {
 
 
 const Button = React.forwardRef((props: TButton, ref: any) => {
-  const {
-    id,
-    text,
-    loading,
-    disabled,
-    icon,
-    onClick,
-    type = EMButtonType.Primary,
-    size = EMButtonSize.Large,
-    style,
-    styleClassname,
-  } = props || {}
+	const {
+		id,
+		text,
+		loading,
+		disabled,
+		icon,
+		onClick,
+		type = EMButtonType.Primary,
+		size = EMButtonSize.Large,
+		style,
+		styleClassname,
+	} = props || {};
 
-  const classnames = classNames({
-    'xt-button': true,
-    'xt-medium-button': size === EMButtonSize.Medium,
-    'xt-small-button': size === EMButtonSize.Small,
-    'xt-primary-button': type === EMButtonType.Primary,
-    'xt-secondary-button': type === EMButtonType.Secondary,
-    'xt-dashed-button': type === EMButtonType.Dashed,
-    'xt-danger-button': type === EMButtonType.Danger,
-    'xt-warn-button': type === EMButtonType.Warn,
-    'xt-disabled-button': disabled || loading,
-    [styleClassname]: true
-  })
-  return (
-    <button
-      ref={ref}
-      id={id}
-      className={classnames}
-      style={style}
-      onClick={onClick}
-      disabled={disabled || loading}
-    >
-      {icon && <span className="xt-button-icon">{icon}</span>}
-      {loading ? <Loading /> : (text || '确定')}
-    </button>
-  )
-})
+	const classnames = classNames({
+		'xt-button': true,
+		'xt-medium-button': size === EMButtonSize.Medium,
+		'xt-small-button': size === EMButtonSize.Small,
+		'xt-primary-button': type === EMButtonType.Primary,
+		'xt-secondary-button': type === EMButtonType.Secondary,
+		'xt-dashed-button': type === EMButtonType.Dashed,
+		'xt-danger-button': type === EMButtonType.Danger,
+		'xt-warn-button': type === EMButtonType.Warn,
+		'xt-disabled-button': disabled || loading,
+		[styleClassname]: true
+	});
+	return (
+		<button
+			ref={ref}
+			id={id}
+			className={classnames}
+			style={style}
+			onClick={onClick}
+			disabled={disabled || loading}
+		>
+			{icon && <span className="xt-button-icon">{icon}</span>}
+			{loading ? <Loading /> : (text || '确定')}
+		</button>
+	);
+});
 
-export default Button
+export default Button;

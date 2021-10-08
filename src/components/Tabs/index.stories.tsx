@@ -6,7 +6,7 @@ import Tabs, { EMTabsType } from './index';
 export default {
   title: 'Example/Components/Tabs',
   component: Tabs
-} as ComponentMeta<typeof Tabs>;
+} as ComponentMeta<typeof Tabs>
 
 const Template: ComponentStory<typeof Tabs> = (args) => {
   console.log('args', args, Tabs)

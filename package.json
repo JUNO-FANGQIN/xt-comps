@@ -1,6 +1,6 @@
 {
   "name": "xtcomps",
-  "version": "1.0.27",
+  "version": "1.0.35",
   "description": "",
   "main": "./dist/lib/index.js",
   "scripts": {
@@ -9,8 +9,13 @@
     "docgen": "styleguidist server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-chromatic": "npx chromatic --project-token=ff980ea10177"
+    "build-chromatic": "npx chromatic --project-token=ff980ea10177",
+    "linit": "eslint --init",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -43,18 +48,33 @@
     "@storybook/manager-webpack5": "^6.3.8",
     "@storybook/react": "^6.3.7",
     "@types/glob": "^7.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "chromatic": "^5.9.2",
     "copy-webpack-plugin": "^9.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.2",
+    "i": "^0.3.7",
     "lerna": "^4.0.0",
+    "lint-staged": "^11.1.2",
+    "npm": "^7.24.1",
+    "pre-commit": "^1.2.2",
     "storybook-css-modules-preset": "^1.1.1",
     "svg-sprite-loader": "^6.0.9",
     "svgo-loader": "^3.0.0",
     "ts-loader": "^9.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.43.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   }

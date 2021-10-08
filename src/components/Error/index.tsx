@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import './style.less'
+import './style.less';
 
 interface TError {
   /** 提示内容 */
@@ -8,9 +8,9 @@ interface TError {
 }
 
 const Error = (props: TError) => {
-  return (
-    <div className="xt-error">{props.text}</div>
-  )
-}
+	return (
+		<div className="xt-error">{props.text}</div>
+	);
+};
 
-export default Error
+export default Error;

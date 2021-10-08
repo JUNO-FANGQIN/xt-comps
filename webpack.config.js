@@ -144,8 +144,10 @@ module.exports = {
     externals: [
         {
             react: 'react',
+            'react-dom': 'ReactDom',
             ...externals
-        }
+        },
+        /antd\/.*/
     ],
     resolve: {
         modules: [

@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Select as AntdSelect } from 'antd'
-import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
-import Error from 'components/Error'
+import * as React from 'react';
+import { Select as AntdSelect } from 'antd';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
+import Error from 'components/Error';
 
-import './style.less'
+import './style.less';
 
 export interface TSelectOption {
   id: string,
@@ -37,29 +37,29 @@ export interface TSelect {
 }
 
 const getSuffixIcon = ({ open }: any) => {
-  const iconStyle = { color: 'rgb(0, 0, 0, 0.85)' }
-  if (open) return <CaretUpOutlined style={iconStyle} />
-  return <CaretDownOutlined style={iconStyle} />
-}
+	const iconStyle = { color: 'rgb(0, 0, 0, 0.85)' };
+	if (open) return <CaretUpOutlined style={iconStyle} />;
+	return <CaretDownOutlined style={iconStyle} />;
+};
 
 const Select = (props: TSelect) => {
-	const { meta = null, input = null, id, options, styleClassname, style, ...args } = props
+	const { meta = null, input = null, options, styleClassname, style, ...args } = props;
 	return (
 		<div className={`xt-select ${styleClassname}`} style={style}>
-      <AntdSelect suffixIcon={getSuffixIcon} showArrow {...(input || {})} {...args}>
-        {Array.isArray(options) && options.map((option: TSelectOption) => (
-          <AntdSelect.Option
-            id={option.id}
-            key={option.id || option.value}
-            value={option.value}
-            disabled={option.disabled}>
-            {option.label}
-          </AntdSelect.Option>
-        ))}
-      </AntdSelect>
-      {meta && meta.touched && meta.error && <Error text={meta.error} />}
+			<AntdSelect suffixIcon={getSuffixIcon} showArrow {...(input || {})} {...args}>
+				{Array.isArray(options) && options.map((option: TSelectOption) => (
+					<AntdSelect.Option
+						id={option.id}
+						key={option.id || option.value}
+						value={option.value}
+						disabled={option.disabled}>
+						{option.label}
+					</AntdSelect.Option>
+				))}
+			</AntdSelect>
+			{meta && meta.touched && meta.error && <Error text={meta.error} />}
 		</div>
-	)
-}
+	);
+};
 
-export default Select
+export default Select;

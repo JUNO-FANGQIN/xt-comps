@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { Checkbox as AntdCheckbox } from 'antd'
-import Error from 'components/Error'
+import * as React from 'react';
+import { Checkbox as AntdCheckbox } from 'antd';
+import Error from 'components/Error';
 
-import './style.less'
+import './style.less';
 
 export interface TCheckboxOption {
   id: string,
-  label: string
+  label: string,
   value: string
 }
 
@@ -31,17 +31,17 @@ export interface TCheckbox {
 }
 
 const Checkbox = (props: TCheckbox) => {
-	const { meta = null, input = null, options, styleClassname, style, ...args } = props
+	const { meta = null, input = null, options, styleClassname, style, ...args } = props;
 	return (
 		<div className={`xt-checkbox ${styleClassname}`} style={style}>
-      <AntdCheckbox.Group {...(input || {})} {...args}>
-        {options && Array.isArray(options) && options.map((option: TCheckboxOption) => (
-          <AntdCheckbox id={option.id} key={option.id} value={option.value}>{option.label}</AntdCheckbox>
-        ))}
-      </AntdCheckbox.Group>
+			<AntdCheckbox.Group {...(input || {})} {...args}>
+				{options && Array.isArray(options) && options.map((option: TCheckboxOption) => (
+					<AntdCheckbox id={option.id} key={option.id} value={option.value}>{option.label}</AntdCheckbox>
+				))}
+			</AntdCheckbox.Group>
 			{meta && meta.touched && meta.error && <Error text={meta.error} />}
 		</div>
-	)
-}
+	);
+};
 
-export default Checkbox
+export default Checkbox;

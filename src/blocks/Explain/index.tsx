@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import './style.less'
+import './style.less';
 
 export interface TExplainItem {
 	key: string,
@@ -19,7 +19,7 @@ export interface TExplain {
 }
 
 const Explain = (props: TExplain) => {
-	const { title, list, styleClassname, style } = props
+	const { title, list, styleClassname, style } = props;
 	return (
 		<div className={`xt-explain ${styleClassname}`} style={style}>
 			<div className="xt-explain-title">{title || '说明：'}</div>
@@ -29,7 +29,7 @@ const Explain = (props: TExplain) => {
 				))}
 			</ol>
 		</div>
-	)
-}
+	);
+};
 
-export default Explain
+export default Explain;
