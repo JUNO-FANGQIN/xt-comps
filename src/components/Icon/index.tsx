@@ -1,28 +1,47 @@
-import * as React from 'react'
-import { Alert as AntdAlert } from 'antd'
+import React from 'react'
+import classNames from 'classnames'
 
-import 'resource/fonts/font.less'
+import './icon.less'
 
-export enum EMIconType {
-  Move = 'move',
-  Add = 'add',
-  Avatar = 'avatar'
+const importAll = (requireContext: __WebpackModuleApi.RequireContext) => { 
+  requireContext.keys().forEach(requireContext)
 }
 
-export interface TIcon {
-  /** id */
-  id: string,
-  /** type，枚举EMIconType */
-  type: EMIconType
+try {
+  importAll(require.context('./svg/', true, /\.svg$/))
+} catch (error) {
+  console.log(error)
+} 
+
+export interface IconProps {
+  readonly name: string
+  className?: string
+  color?: string
+  style?: React.CSSProperties
 }
 
-const Icon = (props: TIcon) => {
-	const { id, type, ...args } = props
-	return (
-		<span className="xt-icon" id={id}>
-      <i className={`icon-${type}`}></i>
-		</span>
-	)
-}
+const Icon = React.forwardRef<SVGSVGElement, IconProps>(function Icon(props, ref) {
+  
+  const {
+    name,
+    className,
+    color,
+    style = {},
+  } = props
+
+  if (!name) {
+    return null
+  }
+
+  return (
+    <svg 
+      className={classNames('xt-icon', className)}
+      style={{ ...style, color }}
+      ref={ref}
+    >
+      <use xlinkHref={'#' + props.name}/>
+    </svg>
+  )
+})
 
 export default Icon

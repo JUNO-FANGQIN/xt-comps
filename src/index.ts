@@ -9,3 +9,5 @@ export {
     EMInputType,
     EMInputSize
 }
+
+export { default as Icon } from 'components/Icon'
