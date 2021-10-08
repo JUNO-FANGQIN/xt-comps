@@ -2,7 +2,7 @@
   "name": "xtcomps",
   "version": "1.0.35",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/lib/index.js",
   "scripts": {
     "build": "webpack --mode development",
     "demo": "webpack serve --config webpack.demo.js",
@@ -37,9 +37,7 @@
     "react-styleguidist": "^11.1.7",
     "ts-import-plugin": "^1.6.7",
     "typescript": "^4.3.5",
-    "webpack-iconfont-plugin-nodejs": "^1.0.19",
-    "xtcomp": "^1.0.25",
-    "xtcomps": "^1.0.33"
+    "xtcomp": "^1.0.25"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -47,7 +45,10 @@
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
+    "@storybook/builder-webpack5": "^6.3.8",
+    "@storybook/manager-webpack5": "^6.3.8",
     "@storybook/react": "^6.3.7",
+    "@types/glob": "^7.1.4",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "babel-eslint": "^10.1.0",
@@ -71,6 +72,8 @@
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^17.0.2",
     "storybook-css-modules-preset": "^1.1.1",
+    "svg-sprite-loader": "^6.0.9",
+    "svgo-loader": "^3.0.0",
     "ts-loader": "^9.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.43.0",

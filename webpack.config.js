@@ -3,9 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TSImportPluginFactory = require('ts-import-plugin')
 const glob = require('glob')
-const webpackIconfontPluginNodejs = require('webpack-iconfont-plugin-nodejs')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
 
 function utils () {
     const entrys = { main: './src/index.ts' }
@@ -107,9 +104,27 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(jpg|png|gif|svg|jpeg|ttf|eot|otf|svg|woff|woff2)$/,
+                test: /\.(jpg|png|gif|jpeg|ttf|eot|otf|woff|woff2)$/,
                 include: /src/,
-                loader: 'url-loader'
+                loader: 'url-loader',
+            },
+            {
+                test: /\.(svg)$/,
+                loader: 'url-loader',
+                exclude: [path.resolve(__dirname, 'src/components/Icon')]
+            },
+            {
+                test: /\.svg$/,
+                include: [path.resolve(__dirname, 'src/components/Icon')], 
+                use: [
+                    { 
+                        loader: 'svg-sprite-loader',
+                        options: {
+                            symbolId: 'icon-[name]',
+                        } 
+                    },
+                    { loader: 'svgo-loader', options: {} },
+                ]
             }
         ]
     },
@@ -125,29 +140,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: (context) => `${context.chunk.name}/style.css`
         }),
-        new webpackIconfontPluginNodejs({
-            fontName: 'xt-icons',
-            cssPrefix: 'icon',
-            svgs: path.join(__dirname, 'src/resource/svgs/*.svg'),
-            fontsOutput: path.join(__dirname, 'src/resource/fonts/'),
-            cssOutput: path.join(__dirname, 'src/resource/fonts/font.less'),
-            htmlOutput: path.join(__dirname, 'src/resource/fonts/font.html'),
-            jsOutput: path.join(__dirname, 'src/resource/fonts/font.js'),
-        }),
-        new BundleAnalyzerPlugin(
-            {
-              analyzerMode: 'server',
-              analyzerHost: '127.0.0.1',
-              analyzerPort: 8889,
-              reportFilename: 'report.html',
-              defaultSizes: 'parsed',
-              openAnalyzer: true,
-              generateStatsFile: false,
-              statsFilename: 'stats.json',
-              statsOptions: null,
-              logLevel: 'info'
-            }
-        )
     ],
     externals: [
         {
