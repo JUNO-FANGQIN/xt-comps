@@ -1,6 +1,4 @@
-const { filterByTerm } = require('../utils/filterByTerm.js')
-
-console.log('filterByTerm', filterByTerm)
+import { filterByTerm } from '../utils/filterByTerm.js'
 
 describe("filter function", () => {
     test("it should filter by a search term", () => {
