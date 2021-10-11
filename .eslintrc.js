@@ -36,6 +36,7 @@ module.exports = {
 		"semicolon": 0,
 		"react/display-name": 0,
 		"indent": 0,
-		"semi": 0
+		"semi": 0,
+		"react/prop-types": "off",
 	}
 };

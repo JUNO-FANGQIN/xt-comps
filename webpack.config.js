@@ -123,7 +123,7 @@ module.exports = {
                             symbolId: 'icon-[name]',
                         } 
                     },
-                    { loader: 'svgo-loader', options: {} },
+                    'svgo-loader',
                 ]
             }
         ]
@@ -156,5 +156,8 @@ module.exports = {
         ],
         mainFiles: ['index', 'index.d'],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.d.ts'],
-    }
+    },
+    resolveLoader: {
+        modules: ['node_modules', './webpack-extension/loaders/'],
+    },    
 }

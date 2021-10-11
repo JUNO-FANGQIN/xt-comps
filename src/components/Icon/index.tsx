@@ -39,7 +39,7 @@ const Icon = React.forwardRef<SVGSVGElement, IconProps>(function Icon(props, ref
       style={{ ...style, color }}
       ref={ref}
     >
-      <use xlinkHref={'#' + props.name}/>
+      <use xlinkHref={'#' + name}/>
     </svg>
   )
 })

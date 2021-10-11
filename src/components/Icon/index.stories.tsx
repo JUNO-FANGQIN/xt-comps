@@ -30,7 +30,7 @@ export const AllIcons = () => {
       {
         IconNames.map((name) => {
         return (
-            <div style={{marginRight: '10px'}}>
+            <div style={{marginRight: '10px'}} key={name}>
               <div style={{textAlign: 'center'}}><Icon name={name}/></div>
               <div>{name}</div>
             </div>

@@ -17,7 +17,7 @@ const svgLoaders = [
           symbolId: 'icon-[name]',
         } 
       },
-      { loader: 'svgo-loader', options: {} },
+      'svgo-loader',
     ]
   }
 ]
@@ -57,6 +57,9 @@ module.exports = async (config) => {
   })
 
   config.module.rules.push(...svgLoaders)
-  console.log(config.module.rules)
+
+  config.resolveLoader = {
+    modules: ['node_modules', path.resolve(__dirname, '../webpack-extension/loaders/')]
+  }
   return config
 }
