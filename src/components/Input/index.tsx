@@ -53,26 +53,47 @@ export interface TInput {
   /** 添加后缀 */
   suffix?: any,
 }
+export default class Input extends React.Component<TInput> {
+  render(){
+    const { meta = null, input = null, id, type = EMInputType.Input, size = EMInputSize.Large, ...args } = this.props;
+    const commonProps = {
+      id: id,
+      size: size,
+      autoComplete: 'off',
+      ...(input || {}),
+      ...args,
+      suffix: args.suffix && <span className="xt-input-suffix">{args.suffix}</span>
+    };
+    return (
+      <div className="xt-input">
+        {type === EMInputType.Input && <AntdInput {...commonProps} />}
+        {type === EMInputType.Password && (!input || input.value ? <AntdInput.Password visibilityToggle {...commonProps} /> : <AntdInput {...commonProps} />)}
+        {type === EMInputType.Search && <AntdInput.Search {...commonProps} />}
+        {meta && meta.touched && meta.error && <Error text={meta.error} />}
+      </div>
+    );
+  }
+}
 
-const Input = (props: TInput) => {
-	const { meta = null, input = null, id, type = EMInputType.Input, size = EMInputSize.Large, ...args } = props;
-	console.log('props', props);
-	const commonProps = {
-		id: id,
-		size: size,
-		autoComplete: 'off',
-		...(input || {}),
-		...args,
-		suffix: args.suffix && <span className="xt-input-suffix">{args.suffix}</span>
-	};
-	return (
-		<div className="xt-input">
-			{type === EMInputType.Input && <AntdInput {...commonProps} />}
-			{type === EMInputType.Password && (!input || input.value ? <AntdInput.Password visibilityToggle {...commonProps} /> : <AntdInput {...commonProps} />)}
-			{type === EMInputType.Search && <AntdInput.Search {...commonProps} />}
-			{meta && meta.touched && meta.error && <Error text={meta.error} />}
-		</div>
-	);
-};
+// const Input = (props: TInput) => {
+// 	const { meta = null, input = null, id, type = EMInputType.Input, size = EMInputSize.Large, ...args } = props;
+// 	console.log('props', props);
+// 	const commonProps = {
+// 		id: id,
+// 		size: size,
+// 		autoComplete: 'off',
+// 		...(input || {}),
+// 		...args,
+// 		suffix: args.suffix && <span className="xt-input-suffix">{args.suffix}</span>
+// 	};
+// 	return (
+// 		<div className="xt-input">
+// 			{type === EMInputType.Input && <AntdInput {...commonProps} />}
+// 			{type === EMInputType.Password && (!input || input.value ? <AntdInput.Password visibilityToggle {...commonProps} /> : <AntdInput {...commonProps} />)}
+// 			{type === EMInputType.Search && <AntdInput.Search {...commonProps} />}
+// 			{meta && meta.touched && meta.error && <Error text={meta.error} />}
+// 		</div>
+// 	);
+// };
 
-export default Input;
+// export default Input;

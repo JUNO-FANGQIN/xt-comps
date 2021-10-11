@@ -1,13 +1,5 @@
-import Button, { EMButtonType, EMButtonSize } from 'components/Button';
-import Input, { EMInputType, EMInputSize } from 'components/Input';
+export type { EMButtonType, EMButtonSize } from './components/Button';
+export { default as Button } from './components/Button';
 
-export {
-    Button,
-    EMButtonType,
-    EMButtonSize,
-    Input,
-    EMInputType,
-    EMInputSize
-}
-
-export { default as Icon } from 'components/Icon'
+export type { EMInputType, EMInputSize } from './components/Input';
+export { default as Input } from './components/Input';
