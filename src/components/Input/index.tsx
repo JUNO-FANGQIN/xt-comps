@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Input as AntdInput } from 'antd';
 import Error from 'components/Error';
 
-import './style.less';
+require('./style.less')
 
 export enum EMInputType {
   Input = 'Input',
