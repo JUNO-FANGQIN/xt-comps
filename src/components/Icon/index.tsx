@@ -20,7 +20,7 @@ export interface IconProps {
   style?: React.CSSProperties
 }
 
-const Icon = React.forwardRef<SVGSVGElement, IconProps>(function Icon(props, ref) {
+const Icon = React.forwardRef<SVGSVGElement, IconProps>(function Icon(props: IconProps, ref) {
   
   const {
     name,
