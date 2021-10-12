@@ -14,6 +14,7 @@
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src",
     "test": "jest"
   },
+  "types": "types/index.d.ts",
   "pre-commit": [
     "lint"
   ],
