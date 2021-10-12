@@ -134,6 +134,10 @@ module.exports = {
                 { 
                     from: path.join(__dirname, 'src/constants'),
                     to: path.join(__dirname, 'dist/constants')
+                },
+                { 
+                    from: path.join(__dirname, 'package.json'),
+                    to: path.join(__dirname, 'dist/package.json')
                 }
             ]
         }),
