@@ -111,21 +111,21 @@ module.exports = {
             {
                 test: /\.(svg)$/,
                 loader: 'url-loader',
-                // exclude: [path.resolve(__dirname, 'src/components/Icon')]
+                exclude: [path.resolve(__dirname, 'src/components/Icon')]
             },
-            // {
-            //     test: /\.svg$/,
-            //     include: [path.resolve(__dirname, 'src/components/Icon')], 
-            //     use: [
-            //         { 
-            //             loader: 'svg-sprite-loader',
-            //             options: {
-            //                 symbolId: 'icon-[name]',
-            //             } 
-            //         },
-            //         { loader: 'svgo-loader', options: {} },
-            //     ]
-            // }
+            {
+                test: /\.svg$/,
+                include: [path.resolve(__dirname, 'src/components/Icon')], 
+                use: [
+                    { 
+                        loader: 'svg-sprite-loader',
+                        options: {
+                            symbolId: 'icon-[name]',
+                        } 
+                    },
+                    'svgo-loader',
+                ]
+            }
         ]
     },
     plugins: [
@@ -156,5 +156,8 @@ module.exports = {
         ],
         mainFiles: ['index', 'index.d'],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.d.ts'],
-    }
+    },
+    resolveLoader: {
+        modules: ['node_modules', './webpack-extension/loaders/'],
+    },    
 }
