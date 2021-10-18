@@ -1,8 +1,8 @@
 ### publish xtcomps
 1. git stash --- 可选if(Git working directory not clean)
 2. npm version patch / minor / major
-1. yarn build
-5. npm publish dist
+3. yarn build
+4. npm publish dist
 
 ### development build xtcomps
 yarn build
